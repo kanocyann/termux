@@ -1,0 +1,18 @@
+pkg install termux-am
+termux-setup-storage
+pkg install git wget python clang gdb cgdb neovim vim zsh openssh openjdk-17 unzip rust
+pkg upgr
+-----------------------git clone---------------------
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+chsh -s zsh
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+-------------------------nvim------------------------
+git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+rm -rf ~/.config/nvim/.git
+rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim
+--------------------------------------------------------
+nvim .termux/termux.properties
+nvim $PRRFIX/etc/motd
